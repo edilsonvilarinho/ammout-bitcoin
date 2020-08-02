@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  provider: ^4.3.1 
   crypto_font_icons: 0.1.0
   http: ^0.12.2
   flutter:

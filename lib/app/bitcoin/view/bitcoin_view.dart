@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:bitcoin/bitcoin.dart';
+import 'package:bitcoin/app/bitcoin/model/bitcoin_model.dart';
 import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Home extends StatefulWidget {
+class BitCoinView extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _BitCoinViewState createState() => _BitCoinViewState();
 }
 
-class _HomeState extends State<Home> {
+class _BitCoinViewState extends State<BitCoinView> {
   bool ocupado = false;
   String _valorCompra = "-- 0,00";
   String _valorVenda = "-- 0,00";
