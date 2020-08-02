@@ -1,4 +1,5 @@
 import 'package:bitcoin/app/bitcoin/controller/bitcoin_controller.dart';
+import 'package:bitcoin/app/bitcoin/service/bitcoin_service.dart';
 import 'package:bitcoin/app/bitcoin/view/bitcoin_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,7 @@ class _AppWidgetState extends State<AppWidget> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<BitCoinController>.value(
-            value: BitCoinController())
+            value: BitCoinController(BitCoinService()))
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
