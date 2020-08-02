@@ -14,7 +14,6 @@ class _BitCoinViewState extends State<BitCoinView> {
   bool ocupado = false;
   String _valorCompra = "-- 0,00";
   String _valorVenda = "-- 0,00";
-  String _valorMercadoA15minutos = "-- 0,00";
   String dropdownValue = "";
   List<String> valuesDropDown = List();
 
@@ -49,7 +48,6 @@ class _BitCoinViewState extends State<BitCoinView> {
   obterValorBitCoin(String value) async {
     String valorCompra = " 0,00";
     String valorVenda = " 0,00";
-    String valorMercadoA15minutos = " 0,00";
     String coin = "";
     try {
       http.Response response = await requestApiBitCoin();
@@ -59,7 +57,6 @@ class _BitCoinViewState extends State<BitCoinView> {
         BitCoin bitCoin = BitCoin.fromJson(map[value]);
         valorCompra = bitCoin.buy.toString();
         valorVenda = bitCoin.sell.toString();
-        valorMercadoA15minutos = bitCoin.d15m.toString();
         coin = bitCoin.symbol;
       }
     } catch (e) {}
@@ -67,7 +64,6 @@ class _BitCoinViewState extends State<BitCoinView> {
     setState(() {
       _valorCompra = "$coin $valorCompra";
       _valorVenda = "$coin $valorVenda";
-      _valorMercadoA15minutos = "$coin $valorMercadoA15minutos";
       ocupado = !ocupado;
     });
   }

@@ -14,15 +14,14 @@ class BitCoin {
   }
 
   double get d15m => _d15m;
-  set d15m(double d15m) => _d15m = d15m;
+
   double get last => _last;
-  set last(double last) => _last = last;
+
   double get buy => _buy;
-  set buy(double buy) => _buy = buy;
+
   double get sell => _sell;
-  set sell(double sell) => _sell = sell;
+
   String get symbol => _symbol;
-  set symbol(String symbol) => _symbol = symbol;
 
   BitCoin.fromJson(Map<String, dynamic> json) {
     _d15m = json['15m'];
